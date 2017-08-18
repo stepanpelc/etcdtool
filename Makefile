@@ -26,11 +26,11 @@ darwin:
 
 rpm:
 	docker pull mickep76/centos-golang:latest
-	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) mickep76/centos-golang:latest make build-rpm
+	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) mickep76/centos-golang:latest build-rpm
 
 binary:
 	docker pull mickep76/centos-golang:latest
-	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) mickep76/centos-golang:latest make build-binary
+	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) mickep76/centos-golang:latest build-binary
 	mkdir release || true
 	mv bin/etcdtool release/etcdtool-${VERSION}-${RELEASE}.linux.x86_64
 
